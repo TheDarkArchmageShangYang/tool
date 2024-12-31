@@ -54,18 +54,19 @@ for PLUGIN in "${PLUGINS[@]}"; do
     fi
 done
 
-# 安装 Powerlevel10k
-if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
-    echo "Installing Powerlevel10k..."
-    git clone --depth=1 https://gitclone.com/github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
-else
-    echo "Powerlevel10k already installed."
-fi
+# # 安装 Powerlevel10k
+# if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
+#     echo "Installing Powerlevel10k..."
+#     git clone --depth=1 https://gitclone.com/github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+# else
+#     echo "Powerlevel10k already installed."
+# fi
 
 # 配置 .zshrc
 echo "Configuring .zshrc..."
-sed -i '/^plugins=/c\plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-z zsh-autoswitch-virtualenv)' ~/.zshrc
-sed -i '/^ZSH_THEME=/c\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
+sed -i '/^plugins=/c\plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-z)' ~/.zshrc
+# sed -i '/^ZSH_THEME=/c\ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc
+sed -i '/^ZSH_THEME=/c\ZSH_THEME="agnoster"' ~/.zshrc
 
 # 刷新配置
 echo "Reloading Zsh..."
