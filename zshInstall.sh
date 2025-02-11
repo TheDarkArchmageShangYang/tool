@@ -20,14 +20,6 @@ else
     echo "Zsh is already installed."
 fi
 
-# 更改默认 shell 为 zsh
-if [ "$SHELL" != "$(which zsh)" ]; then
-    echo "Changing default shell to zsh..."
-    chsh -s "$(which zsh)"
-else
-    echo "Zsh is already the default shell."
-fi
-
 # 安装 oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Installing oh-my-zsh..."
@@ -71,5 +63,13 @@ sed -i '/^ZSH_THEME=/c\ZSH_THEME="agnoster"' ~/.zshrc
 # 刷新配置
 echo "Reloading Zsh..."
 source ~/.zshrc
+
+# 更改默认 shell 为 zsh
+if [ "$SHELL" != "$(which zsh)" ]; then
+    echo "Changing default shell to zsh..."
+    chsh -s "$(which zsh)"
+else
+    echo "Zsh is already the default shell."
+fi
 
 echo "Installation complete! Please restart your terminal to use Zsh as default."
