@@ -40,7 +40,7 @@ for PLUGIN in "${PLUGINS[@]}"; do
     PLUGIN_NAME=$(basename "$PLUGIN")
     if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/$PLUGIN_NAME" ]; then
         echo "Installing $PLUGIN_NAME..."
-        git clone "https://gitclone.com/github.com/$PLUGIN.git" "$HOME/.oh-my-zsh/custom/plugins/$PLUGIN_NAME"
+        git clone "https://github.com/$PLUGIN.git" "$HOME/.oh-my-zsh/custom/plugins/$PLUGIN_NAME"
     else
         echo "$PLUGIN_NAME already installed."
     fi
